@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { getColorFromStorage, storeColor } from "./utils";
+import { Header } from "./components/header";
+import { Links } from "./components/links";
 
 function App() {
   const [color, setColor] = useState<string | null>(null);
@@ -25,7 +27,8 @@ function App() {
             storeColor(e.target.value);
           }}
         />
-        <h1>Good afternoon, Jared</h1>
+        <Header />
+        {/* <Links /> */}
       </section>
     </main>
   );
