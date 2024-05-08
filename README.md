@@ -1,5 +1,5 @@
 <div align="center">
-<a href="https://github.com/othneildrew/Best-README-Template">
+<a href="https://github.com/jaredthecomputerguy/jareds-new-tab">
     <img src="examples/new-tab-logo.jpg" alt="Logo" width="80" height="80">
 </a>
 </div>
