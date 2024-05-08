@@ -6,6 +6,7 @@ export default defineConfig({
   manifest: {
     permissions: ["storage"],
   },
+  outDir: "dist",
   vite: () => ({
     plugins: [react()],
   }),
