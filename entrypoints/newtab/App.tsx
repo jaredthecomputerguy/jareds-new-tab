@@ -28,7 +28,7 @@ function App() {
           }}
         />
         <Header />
-        {/* <Links /> */}
+        <Links />
       </section>
     </main>
   );
