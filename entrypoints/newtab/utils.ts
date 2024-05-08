@@ -32,3 +32,82 @@ export function getGreeting() {
     return "Good Evening";
   }
 }
+
+type HourlyData = {
+  time: string[];
+  temperature_2m: number[];
+};
+
+export type ApiResponse = {
+  latitude: number;
+  longitude: number;
+  generationtime_ms: number;
+  utc_offset_seconds: number;
+  timezone: string;
+  timezone_abbreviation: string;
+  elevation: number;
+  hourly_units: {
+    time: string;
+    temperature_2m: string;
+  };
+  hourly: HourlyData;
+};
+
+export async function fetchWeatherData() {
+  const res = await fetch(
+    "https://api.open-meteo.com/v1/forecast?latitude=38.9582&longitude=-122.6264&hourly=temperature_2m&temperature_unit=fahrenheit&wind_speed_unit=mph&precipitation_unit=inch&timezone=America%2FLos_Angeles&forecast_days=1",
+  );
+
+  if (!res.ok) {
+    console.error("Failed to fetch weather data");
+    return null;
+  }
+
+  const data = await res.json();
+
+  return data as ApiResponse;
+}
+
+const isWeatherDataStored = async () => {
+  const storedWeatherData = await storage.getItem<string>("local:weather");
+
+  if (storedWeatherData) {
+    const parsedData = JSON.parse(storedWeatherData) as ApiResponse;
+
+    const day = parsedData.hourly.time[3];
+
+    const date = new Date(day);
+
+    const now = new Date();
+
+    if (date.getDate() === now.getDate()) {
+      return true;
+    } else {
+      return false;
+    }
+  } else {
+    return false;
+  }
+};
+
+export const getWeatherData = async () => {
+  const isStored = await isWeatherDataStored();
+
+  if (isStored) {
+    const storedWeatherData = await storage.getItem<string>("local:weather");
+
+    return JSON.parse(storedWeatherData!) as ApiResponse;
+  } else {
+    const data = await fetchWeatherData();
+
+    if (data) {
+      try {
+        await storage.setItem("local:weather", JSON.stringify(data));
+      } catch (e) {
+        console.error(e);
+      }
+    }
+
+    return data;
+  }
+};

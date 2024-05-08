@@ -7,9 +7,9 @@ export const MailIcon = () => {
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
-      stroke-width="1"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="1"
+      strokeLinecap="round"
+      strokeLinejoin="round"
       className="icon icon-tabler icons-tabler-outline icon-tabler-mail"
     >
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -28,9 +28,9 @@ export const GithubIcon = () => {
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
-      stroke-width="1"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="1"
+      strokeLinecap="round"
+      strokeLinejoin="round"
       className="icon icon-tabler icons-tabler-outline icon-tabler-brand-github"
     >
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -48,9 +48,9 @@ export const TreezIcon = () => {
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
-      stroke-width="1"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="1"
+      strokeLinecap="round"
+      strokeLinejoin="round"
       className="icon icon-tabler icons-tabler-outline icon-tabler-leaf"
     >
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -69,9 +69,9 @@ export const YoutubeIcon = () => {
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
-      stroke-width="1"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="1"
+      strokeLinecap="round"
+      strokeLinejoin="round"
       className="icon icon-tabler icons-tabler-outline icon-tabler-brand-youtube"
     >
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -90,9 +90,9 @@ export const RedditIcon = () => {
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
-      stroke-width="1"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="1"
+      strokeLinecap="round"
+      strokeLinejoin="round"
       className="icon icon-tabler icons-tabler-outline icon-tabler-brand-reddit"
     >
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -115,9 +115,9 @@ export const TwitchIcon = () => {
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
-      stroke-width="1"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="1"
+      strokeLinecap="round"
+      strokeLinejoin="round"
       className="icon icon-tabler icons-tabler-outline icon-tabler-brand-twitch"
     >
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />

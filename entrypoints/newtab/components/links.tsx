@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { type ReactNode } from "react";
 import {
   MailIcon,
   GithubIcon,
@@ -50,8 +50,8 @@ const LINKS: Link[] = [
 export const Links = () => {
   return (
     <ul className="grid grid-cols-3 gap-4">
-      {LINKS.map((link) => (
-        <li>
+      {LINKS.map((link, i) => (
+        <li key={i}>
           <a
             className="flex gap-2 p-2 text-2xl items-center hover:bg-white/5 rounded-lg hover:underline transition-all ease-out"
             href={link.url}
