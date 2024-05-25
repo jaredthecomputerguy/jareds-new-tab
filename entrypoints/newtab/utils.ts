@@ -2,6 +2,13 @@ import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 import { storage } from "wxt/storage";
 
+type TimeRemaining = {
+  days: string;
+  hours: string;
+  minutes: string;
+  seconds: string;
+};
+
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
@@ -111,3 +118,18 @@ export const getWeatherData = async () => {
     return data;
   }
 };
+
+export function getTimeRemaining(releaseDate: Date): TimeRemaining {
+  const total = releaseDate.getTime() - new Date().getTime();
+  const seconds = Math.floor((total / 1000) % 60);
+  const minutes = Math.floor((total / 1000 / 60) % 60);
+  const hours = Math.floor((total / (1000 * 60 * 60)) % 24);
+  const days = Math.floor(total / (1000 * 60 * 60 * 24));
+
+  return {
+    days: days.toString().padStart(2, "0"),
+    hours: hours.toString().padStart(2, "0"),
+    minutes: minutes.toString().padStart(2, "0"),
+    seconds: seconds.toString().padStart(2, "0"),
+  };
+}
